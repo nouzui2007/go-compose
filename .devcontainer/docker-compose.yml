@@ -5,14 +5,14 @@ services:
     tty: true
     build: "./golang"
     ports:
-      - "10080:80"
+      - "8081:80"
     volumes:
       - ../:/goexample
     security_opt:
       - apparmor:unconfined
     cap_add:
       - SYS_PTRACE
-    depends_on: 
+    depends_on:
       - mysql
 
   mysql:
